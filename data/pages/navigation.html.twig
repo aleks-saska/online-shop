@@ -1,0 +1,109 @@
+{% set user = get_logged_user() %}
+<!-- header start -->
+<header>
+    <div class="header-bottom wrapper-padding-2 res-header-sm sticker header-sticky-3 furits-header">
+        <div class="container-fluid">
+            <div class="header-bottom-wrapper">
+                <div class="logo-2 ptb-35">
+                    <a href="/">
+                        <img src="/img/logo/logo-new.png" alt="">
+                    </a>
+                </div>
+                <div class="menu-style-2 handicraft-menu menu-hover">
+                    <nav>
+                        <ul>
+                            <li><a href="/">home</a></li>
+                            <li><a href="#">categories</a>
+                                <ul class="single-dropdown">
+                                    {% for category in get_available_categories() %}
+                                        <li><a href="/category/{{ category.id }}">{{ category.name }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            <li><a href="#">pages</a>
+                                <ul class="single-dropdown">
+                                    <li><a href="/profile">your profile</a></li>
+                                    <li><a href="/about">about us</a></li>
+                                    <li><a href="/login">login</a></li>
+                                    <li><a href="/register">register</a></li>
+                                    <li><a href="cart.html">cart page</a></li>
+                                    <li><a href="/contact">contact</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="cart.html">shop</a>
+                            </li>
+                            <li><a href="/contact">contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="furits-login-cart">
+                    <div class="furits-login">
+                        <ul>
+                            {% if null != user %}
+                                <li>
+                                    <a href="/profile">Profile</a>
+                                </li>
+                                <li>
+                                    <a class="logout-btn" href="/logout">Logout</a>
+                                </li>
+                            {% else %}
+                                <li>
+                                    <a href="/login">Login</a>
+                                </li>
+                                <li>
+                                    <a href="/register">Reg</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <div class="header-cart-4 furits-cart">
+                        <a class="icon-cart" href="#">
+                            <i class="pe-7s-shopbag"></i>
+                            <span id="navigation-cart-total-items-holder" class="handicraft-count">{{ order.orderItems.count }}</span>
+                        </a>
+                        <div id="navigation-cart-holder">
+                            {% include 'navigation-cart.html.twig' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="mobile-menu-area handicraft-menu d-md-block col-md-12 col-lg-12 col-12 d-lg-none d-xl-none">
+                    <div class="mobile-menu">
+                        <nav id="mobile-menu-active">
+                            <ul class="menu-overflow">
+                                <li><a href="#">HOME</a>
+                                    <ul>
+                                        <li><a href="index.html">Fashion</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">pages</a>
+                                    <ul>
+                                        <li><a href="about-us.html">about us</a></li>
+                                        <li><a href="cart.html">cart page</a></li>
+                                        <li><a href="checkout.html">checkout</a></li>
+                                        <li><a href="wishlist.html">wishlist</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">shop</a>
+                                    <ul>
+                                        <li><a href="shop-grid-2-col.html"> grid 2 column</a></li>
+                                        <li><a href="product-details-2.html">tab style 2</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">BLOG</a>
+                                    <ul>
+                                        <li><a href="blog-sidebar.html">blog sidebar</a></li>
+                                        <li><a href="blog-details.html">blog details</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/contact"> Contact  </a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header end -->

@@ -1,0 +1,23 @@
+{
+  "name": "aleks-saska/online-shop",
+  "authors": [
+    {
+      "name": "Aleksandra.Vidojevic",
+      "email": "avidojevic91@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "src\\": "src"
+    }
+  },
+  "require": {
+    "twig/twig": "^2.0",
+    "doctrine/orm": "^2.7",
+    "vlucas/phpdotenv": "^4.1",
+    "ext-json": "*",
+    "swiftmailer/swiftmailer": "^6.0",
+    "delight-im/auth": "^8.1",
+    "vlucas/valitron": "^1.4"
+  }
+}

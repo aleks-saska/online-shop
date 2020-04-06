@@ -1,0 +1,30 @@
+{% block navigation %}
+    <nav class="admin-navigation">
+        <div style="border-bottom: 1px solid #ffffff42; padding: 10px 0;">
+            <a href="/admin/" style="display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;">
+                <img src="/img/logo/logo-new.png" alt="">
+                <span>E-service shop</span>
+            </a>
+        </div>
+        <div style="padding: 10px 15px;">
+            <ul>
+                <li><a href="/admin">Dashboard</a></li>
+                <li>Product
+                    <ul>
+                        <li><a href="/admin/product/list">List All</a></li>
+                        <li><a href="/admin/product/create">Add New</a></li>
+                    </ul>
+                </li>
+                <li>Category
+                    <ul>
+                        <li><a href="/admin/category/list">List All</a></li>
+                        <li><a href="/admin/category/create">Add New</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+{% endblock %}
